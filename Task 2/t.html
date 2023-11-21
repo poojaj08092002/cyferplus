@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Details</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 100%;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ffccff, #e6ccff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+    .container {
+    width: 400px;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: #f0f0f0;
+    background-size: cover;
+    border: 5px solid #660033; /* Add this line to set the border color */
+    background-position: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+
+        .profile-photo {
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            max-width: 100%;
+            max-height: 150px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            border: 5px solid #3498db;
+        }
+
+        h1, p {
+            text-align: center;
+            color: #333;
+            margin: 0;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        p {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ business_name }}</h1>
+        <img src="{{ url_for('static', filename='uploads/' + photo) }}" alt="Profile Photo" class="profile-photo">
+         <p><b>About Your Bussiness:</b> {{ about_bussiness }}</p>
+        <p><b>Name:</b> {{ name }}</p>
+        <p><b>Email:</b> {{ email }}</p>
+        <p><b>Phone:</b> {{ phone }}</p>
+        <p><b>WhatsApp:</b> {{ whatsapp }}</p>
+        <p><b>Instagram:</b> {{ instagram }}</p>
+        <p><b>Facebook:</b> {{ facebook }}</p>
+        <p><b>Twitter:</b> {{ twitter }}</p>
+        <p><b>Website:</b> {{ website }}</p>
+        <p><b>Address:</b> {{ address }}</p>
+
+    </div>
+</body>
+</html>
