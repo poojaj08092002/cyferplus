@@ -11,7 +11,6 @@ def index():
 @app.route('/', methods=['POST'])
 def submit():
     if request.method == 'POST':
-        # Retrieve form data
         business_name = request.form['business_name']
         about_bussiness = request.form['about_bussiness']
         name = request.form['name']
@@ -23,22 +22,14 @@ def submit():
         twitter = request.form['twitter']
         website = request.form['website']
         address = request.form['address']
-
-        # Handle file upload
         if 'photo' in request.files:
             file = request.files['photo']
-
-            # Create the 'static/uploads/' directory if it doesn't exist
             uploads_dir = os.path.join(app.root_path, 'static', 'uploads')
             os.makedirs(uploads_dir, exist_ok=True)
-
-            # Save the file to the 'static/uploads/' folder
             file.save(os.path.join(uploads_dir, file.filename))
             photo = file.filename
         else:
             photo = None
-
-        # Render the user data on another HTML page
         return render_template('t.html',
                                name=name, email=email, phone=phone,
                                whatsapp=whatsapp, instagram=instagram,
